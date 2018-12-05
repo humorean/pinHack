@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Pinterest Follow Back Extension",
+    "version": "1.0",
+    "description": "Scroll to the end of Pinterest page then follow back",
+    "icons" : {
+        "128": "images/icon128.png",
+        "48": "images/icon48.png",
+        "16": "images/icon16.png"
+    },
+    "page_action": {
+        "default_icon": "images/icon16.png",
+        "default_popup": "popup.html",
+        "default_title": "SocialScroll"
+    },
+    "background": {
+        "scripts": ["./js/eventPage.js"],
+        "persistent": false
+    },
+    "content_scripts" : [ 
+        {
+            "matches": ["https://www.pinterest.com/*"],
+            "js" : ["./js/contentScroll.js","./js/contentFollow.js"],
+            "css": ["css/content.css"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "storage",
+        "https://www.pinterest.com/*"
+    ]
+  }
+  

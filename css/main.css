@@ -1,0 +1,13 @@
+.popup h3{
+    width: 200px;
+    padding: 15px;
+    color: steelblue;
+}
+
+.popup .hidden{
+    display: none;
+}
+
+.popup .show{
+    display: block;
+}
